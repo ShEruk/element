@@ -21,19 +21,13 @@ const Home: NextPage = () => {
           <Paper className="container-lg flex flex-col w-2/3 h-2/3 m-auto bg-white ">
             <Box className="w-2/3 m-auto text-center bg-gray-100">
               <Typography variant={"h5"}>
-                はじめに
+                始めましょう
               </Typography>
               <Box className="m-3">
                 <Typography>
-                  プログラミング
-                  プログラミングとは、「コンピュータにさせたい仕事を順番に書き出す作業」のこと。
-                  コンピューターが理解できる言語で命令を出さなければいけません。
+                  今回のチュートリアルではコードを書く事を目標にするのではなく『どのようにコードを書くかを考える事』を重視した物です。
                   
-                  プログラム
-                  プログラムとは、「コンピュータにやってほしいことを理解できる言葉にしたもの」。
-                  
-                  プログラミング言語
-                  「コンピュータが理解できる言葉＝プログラミング言語」であり、コンピュータに命令できる言語
+                  まずはプログラムを書くために必要な基礎の説明から始めていきましょう。
                 </Typography>
               </Box>
             </Box>

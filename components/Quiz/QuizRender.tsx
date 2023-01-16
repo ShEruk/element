@@ -17,11 +17,7 @@ const css = {
 
 const choices = ["aaa","bbb","ccc","ddd"]
 
-const quizDataSet:QuizDataSet = {
-  question:"",
-  choices:{a:""},
-  answer:""
-}
+
 
 const QuizRender:React.FC = () => {
   const [selected,setSelected] = useState(-1)
@@ -47,6 +43,11 @@ const QuizRender:React.FC = () => {
 export default QuizRender
 
 
+//数字から英字にする関数
+const numToAlpha = (num:number) => {
+  const value = 10 as const
+  return (num+value).toString(36)
+}
 
 
 interface QuizWrapperProps{
@@ -77,8 +78,13 @@ const QuizWrapper:React.FC<QuizWrapperProps> = ({children,isRight}) => {
   )
 }
 
-
-const QuizRenderAnswer:React.FC = () => {
+//作成例
+const quizDataSetExample:QuizDataSet = {
+  question:"",
+  choices:{a:""},
+  answer:""
+}
+const QuizRenderExample:React.FC = () => {
   const [selected,setSelected] = useState(-1)
   const [answer, setAnswer] = useState<string>("")
 
@@ -94,7 +100,7 @@ const QuizRenderAnswer:React.FC = () => {
   
   return(
     <QuizWrapper isRight={undefined}>
-      <Typography className={css.quiz} variant={'h6'}>Q: {quizDataSet.question}</Typography>
+      <Typography className={css.quiz} variant={'h6'}>Q: {quizDataSetExample.question}</Typography>
       <Box className={css.choices}>
         {choices.map((element,index) => (
           <Button className={selected===index?css.choiceSelected:css.choice} variant={"outlined"}  onClick={()=>handleButtonClick(index)}>
@@ -106,9 +112,3 @@ const QuizRenderAnswer:React.FC = () => {
   )
 }
 
-
-//数字から英字にする関数
-const numToAlpha = (num:number) => {
-  const value = 10 as const
-  return (num+value).toString(36)
-}
